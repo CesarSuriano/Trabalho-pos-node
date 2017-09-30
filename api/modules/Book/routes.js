@@ -3,7 +3,7 @@ const router = express.Router()
 
 const Controller = require('./controller')
 
-/* GET users listing. */
+/* GET Book listing. */
 router.get('/', (req, res, next) =>
   Controller.find(req, res, {})
 )
