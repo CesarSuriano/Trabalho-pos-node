@@ -1,12 +1,23 @@
 const mongoose = require( 'mongoose' )
 
-const MODEL_NAME = 'Course'
+const MODEL_NAME = 'User'
 const _schema = {
-  name: String,
-  teacher: {
+  name: {
     type: String,
-    default: 'Suissa',
     required: true
+  },
+  type: {
+    type: String,
+    required: true,
+    enum: [
+      'teacher', 
+      'student'
+    ] 
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
   }
 }
 const schema = new mongoose.Schema( _schema )
